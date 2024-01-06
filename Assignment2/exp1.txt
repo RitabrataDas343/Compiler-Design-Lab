@@ -1,0 +1,69 @@
+This assembly code is generated for x86-64 architecture 
+and is the result of compiling the C program provided to 
+check the endianness of the machine.
+
+The first few lines of the assembly code 
+define the source file name, the text section and the 
+read-only data section.
+
+.LC0 and .LC1 are two read-only data sections that 
+contain the string "Little endian" and "Big endian" respectively.
+ These strings are later used by the program.
+
+The next few lines define the main function and set up 
+the stack frame for it. The instructions pushq %rbp and movq 
+%rsp, %rbp are used to set up the stack frame pointer.
+
+The instruction movl $1, -20(%rbp) assigns the value 1 to the 
+variable "num". The instruction leaq -20(%rbp), %rax loads the 
+address of "num" into the register %rax.
+
+The instruction movq %rax, -16(%rbp) stores the address 
+of "num" in the memory location pointed to by the register %rbp.
+
+The instruction movzbl (%rax), %eax loads the value stored at 
+the memory location pointed to by %rax into the register %eax. 
+This value is the first byte of the "num" variable, which is 
+used to determine the endianness of the machine.
+
+The instruction testb %al, %al performs a bitwise AND 
+operation between the value in %al and itself. If the 
+result is zero, it means that the first byte of "num" is 
+0, indicating that the machine is big endian. If the result 
+is non-zero, the machine is little endian.
+
+The instruction je .L2 jumps to the label .L2 if the 
+result of the previous instruction is zero. This is the 
+case for big endian machines.
+
+The instruction leaq .LC0(%rip), %rax loads the 
+address of the string "Little endian" into the register 
+%rax. The instruction movq %rax, %rdi stores the address 
+of the string in the register %rdi, which is the first 
+argument of the puts function.
+
+The instruction call puts@PLT calls the puts 
+function, which prints the string "Little endian" 
+to the console.
+
+For big endian machines, the program jumps to 
+label .L2, where the instruction leaq .LC1(%rip), 
+%rax loads the address of the string "Big endian" 
+into the register %rax. The instruction movq %rax, 
+%rdi stores the address of the string in the register 
+%rdi, which is the first argument of the puts function.
+
+The instruction call puts@PLT calls the puts function, 
+which prints the string "Big endian" to the console.
+
+The instruction movl $0, %eax sets the return 
+value of the main function to 0.
+
+The instructions movq -8(%rbp), %rdx and subq %fs:40, 
+%rdx are used to check for stack overflow and 
+call the __stack_chk_fail@PLT function if an 
+overflow is detected.
+
+The instruction leave is used to restore the 
+stack frame pointer and the instruction ret is 
+used to return from the main function.

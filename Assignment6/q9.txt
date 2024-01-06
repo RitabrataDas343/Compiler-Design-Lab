@@ -1,0 +1,9 @@
+S->bCEi
+C->dD
+D->cD
+D->#
+E->FG
+F->h
+f->#
+G->g 
+G->#

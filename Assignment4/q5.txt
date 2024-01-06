@@ -1,0 +1,13 @@
+    L ∪ D = {a, b, c, d, e, 0, 1, 2, 3, 4}
+
+    LD = {a0, a1, a2, a3, a4, 
+          b0, b1, b2, b3, b4, 
+          c0, c1, c2, c3, c4,
+          d0, d1, d2, d3, d4,
+          e0, e1, e2, e3, e4}
+
+    L(L ∪ D) = {aa, ab, ac, ad, ae, a0, a1, a2, a3, a4,
+                ba, bb, bc, bd, be, b0, b1, b2, b3, b4,
+                ca, cb, cc, cd, ce, c0, c1, c2, c3, c4, 
+                da, db, dc, dd, de, d0, d1, d2, d3, d4,
+                ea, eb, ec, ed, ee, e0, e1, e2, e3, e4}

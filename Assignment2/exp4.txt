@@ -1,0 +1,31 @@
+Here is a possible context-free grammar for the while-loop construct:
+
+<while-loop> ::= "while" "(" <condition> ")" "begin" <statement> <statement> "end"
+<condition> ::= <expression>
+<statement> ::= <assignment> | <while-loop>
+<assignment> ::= <identifier> ":=" <expression>
+<expression> ::= <term> | <term> "+" <expression> | <term> "-" <expression>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <identifier> | <constant> | "(" <expression> ")"
+
+Here is an operator precedence parsing table based on the grammar:
+
++-------------+-------------+-------------+-------------+
+| Operator    | Associativity| Precedence  | Stack Symbol |
++-------------+-------------+-------------+-------------+
+| "while"     | left to right| 1           | <while-loop> |
++-------------+-------------+-------------+-------------+
+| "("         | left to right| 2           | <condition>  |
++-------------+-------------+-------------+-------------+
+| "begin"     | left to right| 3           | <statement>  |
++-------------+-------------+-------------+-------------+
+| ":="        | right to left| 4           | <assignment> |
++-------------+-------------+-------------+-------------+
+| "+" , "-"   | left to right| 5           | <expression> |
++-------------+-------------+-------------+-------------+
+| "*" , "/"   | left to right| 6           | <term>       |
++-------------+-------------+-------------+-------------+
+| "end"       | left to right| 7           | <statement>  |
++-------------+-------------+-------------+-------------+
+| ")"         | left to right| 8           | <condition>  |
++-------------+-------------+-------------+-------------+

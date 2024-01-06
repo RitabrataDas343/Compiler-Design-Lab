@@ -1,0 +1,49 @@
+
+
+Lexeme patterns:
+
+    if(a == 5)
+    {
+    }
+    else
+    {
+    }
+
+Keywords:
+
+    if
+    else
+
+Tokens:
+
+    (
+    a
+    ==
+    5
+    )
+    {
+    x
+    =
+    y
+    z
+    ;
+    i
+    =
+    i
+    1
+    ;
+    }
+    else
+    {
+    x
+    =
+    y
+    –
+    z
+    ;
+    i
+    =
+    i
+    1
+    ;
+    }

@@ -1,0 +1,3 @@
+(a|b)(a|b) generates the language {aa, ab, ba, bb}.
+
+a(a|b)b generates the language {aab, abb}.
